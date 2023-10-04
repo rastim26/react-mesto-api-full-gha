@@ -1,0 +1,15 @@
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px -7px rgba(255, 255, 255, 0.7),
+    0 4px 35px -9px rgba(255, 255, 255, 0.7);
+}

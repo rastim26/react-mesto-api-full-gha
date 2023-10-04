@@ -1,0 +1,12 @@
+.auth__container {
+  width: 358px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+}
+@media (max-width: 450px) {
+  .auth__container {
+    width: 260px;
+  }
+}

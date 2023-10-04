@@ -1,0 +1,11 @@
+.auth {
+  padding-top: 62px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+  .auth {
+    padding-top: 42px;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "mesto-fullstack",
+  "version": "1.0.0",
+  "description": "Проект Mesto фронтенд + бэкенд",
+  "main": "app.js",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "celebrate": "^15.0.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.0.0",
+    "mongoose": "^7.4.4",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "lint": "npx eslint .",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rastim26/mesto-fullstack.git"
+  },
+  "keywords": [],
+  "author": "Rastim Safarov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rastim26/mesto-fullstack/issues"
+  },
+  "homepage": "https://github.com/rastim26/mesto-fullstack#readme"
+}

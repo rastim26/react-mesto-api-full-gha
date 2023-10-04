@@ -1,0 +1,22 @@
+.profile__overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.8);
+    background-image: url(../../../images/pen.svg);
+    background-size: 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+
+.profile__overlay:hover {
+    opacity: 1;
+}
