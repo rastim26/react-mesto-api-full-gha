@@ -5,12 +5,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/rastim26/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 130.193.49.198
 
-Frontend https://...
+Frontend https://rastimesto.nomoredomainsrocks.ru/
 
-Backend https://...
+Backend https://api.rastimesto.nomoredomainsrocks.ru/
