@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from './Header';
 import Form from "./popups/Form";
-import * as auth from "../utils/Auth";
 
 const Login = ({handleLogin}) => {
 
