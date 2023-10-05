@@ -76,7 +76,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: 'https://nomoreparties.co/v1/cohort-66',
+  baseUrl: 'https://api.rastimesto.nomoredomainsrocks.ru',
   headers: {
     authorization: 'daca49b5-68d6-4b10-a310-ee0cfcd15750',
     'Content-Type': 'application/json'
