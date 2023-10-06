@@ -1,7 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  'https://api.rastimesto.nomoredomainsrocks.ru',
-  'http://api.rastimesto.nomoredomainsrocks.ru',
+  'https://rastimesto.nomoredomainsrocks.ru',
+  'http://rastimesto.nomoredomainsrocks.ru',
   'localhost:3000',
 ];
 
