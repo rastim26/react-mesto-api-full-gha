@@ -16,7 +16,7 @@
     "mongodb": "^6.0.0",
     "mongoose": "^7.4.4",
     "validator": "^13.11.0",
-    "winston": "^3.10.0"
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "eslint": "^8.49.0",
