@@ -37,7 +37,7 @@ const likeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((card) => res.status(201).send(card))
+    .then((card) => res.status(200).send(card))
     .catch(next);
 };
 
