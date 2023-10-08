@@ -11,9 +11,8 @@ const {
 
 const getUsers = (req, res, next) => {
   User.find({})
-    .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((users) => {
-      res.send(users);
+      res.status(200).send(users);
     })
     .catch(next);
 };
