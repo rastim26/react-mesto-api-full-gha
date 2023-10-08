@@ -14,6 +14,8 @@ const corsHandler = require('./middlewares/corseHandler');
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const app = express();
 
+require('dotenv').config(); 
+
 mongoose.connect(DB_URL);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
