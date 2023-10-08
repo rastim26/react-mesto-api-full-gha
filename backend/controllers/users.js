@@ -8,7 +8,7 @@ const getUsers = (req, res, next) => {
   User.find({})
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((users) => {
-      res.send({ data: users });
+      res.send(users);
     })
     .catch(next);
 };
@@ -42,11 +42,12 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       res
-        .cookie('jwt', token, {
-          maxAge: 3600000 * 24 * 7,
-          httpOnly: true,
-        })
-        .end();
+        .send({ token });
+      // .cookie('jwt', token, {
+      //   maxAge: 3600000 * 24 * 7,
+      //   httpOnly: true,
+      // })
+      // .end();
     })
     .catch(next);
 };
@@ -55,7 +56,7 @@ const getUserInfo = (req, res, next) => {
   User.findById(req.params.userId || req.user._id)
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     })
     .catch(next);
 };
@@ -68,7 +69,7 @@ const updateUserInfo = (req, res, next) => {
     { new: true, runValidators: true },
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -81,7 +82,7 @@ const updateUserAvatar = (req, res, next) => {
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     })
     .catch(next);
 };

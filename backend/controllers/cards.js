@@ -5,14 +5,14 @@ const Card = require('../models/card');
 const getCards = (req, res, next) => {
   Card.find({})
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((card) => res.send({ data: card }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
 const createCard = (req, res, next) => {
   const { name, link } = req.body;
   Card.create({ name, link, owner: req.user._id })
-    .then((cards) => res.status(201).send({ data: cards }))
+    .then((cards) => res.status(201).send(cards))
     .catch(next);
 };
 
@@ -25,7 +25,7 @@ const deleteCard = (req, res, next) => {
     .then((card) => {
       if (userId !== card.owner.toString()) throw new ForbiddenError('У вас недостаточно прав');
       Card.deleteOne(card)
-        .then(() => res.send({ data: card }));
+        .then(() => res.send(card));
     })
     .catch(next);
 };
@@ -37,7 +37,7 @@ const likeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((card) => res.status(201).send({ data: card }))
+    .then((card) => res.status(201).send(card))
     .catch(next);
 };
 
@@ -48,7 +48,7 @@ const dislikeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((card) => res.send({ data: card }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 

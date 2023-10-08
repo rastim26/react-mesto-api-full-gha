@@ -76,9 +76,10 @@ class Api {
 }
 
 export const api = new Api({
+  // baseUrl: 'http://localhost:3000',
   baseUrl: 'https://api.rastimesto.nomoredomainsrocks.ru',
   headers: {
-    authorization: 'daca49b5-68d6-4b10-a310-ee0cfcd15750',
+    'Authorization': `Bearer ${localStorage.getItem("jwt")}`,
     'Content-Type': 'application/json'
   },
 });

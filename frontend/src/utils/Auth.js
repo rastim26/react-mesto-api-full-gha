@@ -1,3 +1,4 @@
+// export const BASE_URL = 'http://localhost:3000';
 export const BASE_URL = 'https://api.rastimesto.nomoredomainsrocks.ru/';
 
 const getResponseData = (res) => {
@@ -22,6 +23,7 @@ export const register = (email, password) => {
 export const authorize = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
+    // credentials: 'include', // теперь куки посылаются вместе с запросом
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
