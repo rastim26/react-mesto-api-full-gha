@@ -4,7 +4,6 @@ const Card = require('../models/card');
 
 const getCards = (req, res, next) => {
   Card.find({})
-    .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((card) => res.send(card))
     .catch(next);
 };
