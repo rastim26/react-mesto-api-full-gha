@@ -55,10 +55,7 @@ const login = (req, res, next) => {
 
 const getUserInfo = (req, res, next) => {
   User.findById(req.params.userId || req.user._id)
-    .then((user) => {
-      console.log(req);
-      res.status(200).send(user);
-    })
+    .then((user) => res.status(200).send(user))
     .catch(next);
 };
 
