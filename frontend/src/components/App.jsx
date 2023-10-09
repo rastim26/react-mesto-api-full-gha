@@ -179,7 +179,7 @@ function App() {
         if (res){
           setLoggedIn(true);  // авторизуем пользователя
           navigate("/", {replace: true});
-          setCurrentUser(res);
+          // setCurrentUser(res);
           setUserEmail(res.email);
         }
       })

@@ -5,7 +5,7 @@ const NotFoundError = require('../errors/not-found-err');
 const AlreadyExistsError = require('../errors/already-exists-err');
 
 const {
-  NODE_ENV = 'production',
+  NODE_ENV,
   JWT_SECRET,
 } = process.env;
 
