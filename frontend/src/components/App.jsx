@@ -173,20 +173,18 @@ function App() {
   const tokenCheck = () => {
     // если у пользователя есть токен в localStorage, 
     // эта функция проверит, действующий он или нет
-    if (localStorage.getItem('jwt')){
-      const jwt = localStorage.getItem('jwt');
+    const jwt = localStorage.getItem('jwt');
 
-      if (jwt){ 
-        auth.getContent(jwt) // проверим токен
-        .then((res) => {
-          if (res){
-            setLoggedIn(true);  // авторизуем пользователя
-            navigate("/", {replace: true});
-            setUserEmail(res.email);
-          }
-        })
-        .catch(err => console.log(err))
-      }
+    if (jwt){ 
+      auth.getContent(jwt) // проверим токен
+      .then((res) => {
+        if (res){
+          setLoggedIn(true);  // авторизуем пользователя
+          navigate("/", {replace: true});
+          setUserEmail(res.email);
+        }
+      })
+      .catch(err => console.log(err))
     }
   } 
 
