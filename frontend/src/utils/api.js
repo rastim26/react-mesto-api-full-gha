@@ -4,10 +4,13 @@ class Api {
     this._headers = options.headers;
   }
 
-  _checkResponse = (res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
+  _checkResponse = (res) => { 
+    return res.ok ? res.json() : Promise.reject(`Ошибка api: ${res.status}`);
+  }
 
   getCards = () => {
     return fetch(`${this._baseUrl}/cards`, {
+      method: 'GET',
       headers: this._headers,
     })
       .then(this._checkResponse)
@@ -79,7 +82,7 @@ export const api = new Api({
   // baseUrl: 'http://localhost:3000',
   baseUrl: 'https://api.rastimesto.nomoredomainsrocks.ru',
   headers: {
-    'Authorization': `Bearer ${localStorage.getItem("jwt")}`,
+    authorization: `Bearer ${localStorage.getItem("jwt")}`,
     'Content-Type': 'application/json'
   },
 });

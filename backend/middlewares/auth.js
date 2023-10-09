@@ -9,7 +9,10 @@ const {
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
 
-  if (!authorization || !authorization.startsWith('Bearer ')) throw new UnauthorizedError('Необходима авторизация');
+  if (!authorization || !authorization.startsWith('Bearer ')) {
+    console.log(authorization);
+    throw new UnauthorizedError('Необходима авторизация');
+  }
   const token = authorization.replace('Bearer ', '');
 
   // const token = req.cookies.jwt;
@@ -23,9 +26,9 @@ module.exports = (req, res, next) => {
       NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
     );
   } catch (e) {
+    console.log(e);
     throw new UnauthorizedError('Необходима авторизация');
   }
-  console.log(payload);
   req.user = payload;
   next();
 };
