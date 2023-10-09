@@ -42,7 +42,6 @@ function App() {
     if (loggedIn) {
       Promise.all([api.getUserInfo(), api.getCards()])
       .then(([userData, cardsData]) => {
-        console.log(userData, cardsData);
         setCurrentUser(userData);
         setCards(cardsData);
       })
@@ -143,7 +142,6 @@ function App() {
     .then((data) => {
       if (data.token) {
         setLoggedIn(true);
-        setUserEmail(email);
         navigate('/', {replace: true});
       }
     })
@@ -181,6 +179,7 @@ function App() {
         if (res){
           setLoggedIn(true);  // авторизуем пользователя
           navigate("/", {replace: true});
+          setCurrentUser(res);
           setUserEmail(res.email);
         }
       })
