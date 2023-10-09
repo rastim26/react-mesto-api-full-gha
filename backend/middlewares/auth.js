@@ -3,7 +3,7 @@ const UnauthorizedError = require('../errors/unauthorized-err');
 
 const {
   NODE_ENV = 'production',
-  JWT_SECRET = 'another-secret-key',
+  JWT_SECRET,
 } = process.env;
 
 module.exports = (req, res, next) => {

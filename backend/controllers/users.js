@@ -6,7 +6,7 @@ const AlreadyExistsError = require('../errors/already-exists-err');
 
 const {
   NODE_ENV = 'production',
-  JWT_SECRET = 'another-secret-key',
+  JWT_SECRET,
 } = process.env;
 
 const getUsers = (req, res, next) => {
@@ -43,7 +43,7 @@ const login = (req, res, next) => {
         NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
         { expiresIn: '7d' },
       );
-      res.status(200).send(token);
+      res.status(200).send({ token });
       // .cookie('jwt', token, {
       //   maxAge: 3600000 * 24 * 7,
       //   httpOnly: true,
