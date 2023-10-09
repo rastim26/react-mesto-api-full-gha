@@ -45,8 +45,7 @@ const login = (req, res, next) => {
         NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
         { expiresIn: '7d' },
       );
-      res
-        .send({ token });
+      res.status(200).send({ token });
       // .cookie('jwt', token, {
       //   maxAge: 3600000 * 24 * 7,
       //   httpOnly: true,
@@ -60,7 +59,7 @@ const getUserInfo = (req, res, next) => {
   User.findById(req.params.userId || req.user._id)
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((user) => {
-      res.send(user);
+      res.status(200).send(user);
     })
     .catch(next);
 };
@@ -73,7 +72,7 @@ const updateUserInfo = (req, res, next) => {
     { new: true, runValidators: true },
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((user) => res.send(user))
+    .then((user) => res.status(200).send(user))
     .catch(next);
 };
 
@@ -86,7 +85,7 @@ const updateUserAvatar = (req, res, next) => {
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
     .then((user) => {
-      res.send(user);
+      res.status(200).send(user);
     })
     .catch(next);
 };

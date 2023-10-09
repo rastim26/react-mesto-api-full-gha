@@ -24,7 +24,7 @@ const deleteCard = (req, res, next) => {
     .then((card) => {
       if (userId !== card.owner.toString()) throw new ForbiddenError('У вас недостаточно прав');
       Card.deleteOne(card)
-        .then(() => res.send(card));
+        .then(() => res.status(200).send(card));
     })
     .catch(next);
 };
@@ -47,7 +47,7 @@ const dislikeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Запрашиваемая запись не найдена'))
-    .then((card) => res.send(card))
+    .then((card) => res.status(200).send(card))
     .catch(next);
 };
 
