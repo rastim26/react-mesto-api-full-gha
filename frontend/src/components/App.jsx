@@ -138,9 +138,9 @@ function App() {
   }
 
   const handleLogin = ({ email, password }) => {
-    auth.authorize(email, password)
-    .then((data) => {
-      if (data.token) {
+    return auth.authorize(email, password)
+    .then((token) => {
+      if (token) {
         setLoggedIn(true);
         navigate('/', {replace: true});
       }
